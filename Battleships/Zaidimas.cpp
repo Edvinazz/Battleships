@@ -5,6 +5,8 @@
 
 using namespace std;
 
+
+
 int mas[10][10];
 int mas2[10][10];
 int laivai = 0;
@@ -42,10 +44,10 @@ void PLaivai(int i, bool test) {
 void map() {
 
 	
-	
+	system("color 1a");
 	system("cls");
 	cout << "Tavo laivai:" << endl;
-	cout << "  0|1|2|3|4|5|6|7|8|9|" << endl;
+	cout << "  0|1|2|3|4|5|6|7|8|9|      || *(Tusti langeliai) +(Numustas laivas) -(Nepataikyta)" << endl;
 	for (int i = 0; i < 10; i++) {
 		cout << i << "|";
 		for (int j = 0; j < 10; j++) {
@@ -83,7 +85,7 @@ void map() {
 				cout << "-" << " ";
 			}
 			else {
-				cout << mas2[i][j] << " ";
+				cout << "*" << " ";
 			}
 		}
 		cout << endl;
@@ -170,7 +172,13 @@ void Zaidimas() {
 			return;
 		}
 		else if (laivai2 == 0){
-			cout << "Sveikinimai, Jus laimejote laivu musi";
+			cout << "Sveikinimai, Jus laimejote laivu musi" << endl;
+			cout << "*************************************************" << endl;
+			cout << "*************************************************" << endl;
+			cout << "*********************Pergale*********************" << endl;
+			cout << "*************************************************" << endl;
+			cout << "*************************************************" << endl;
+
 			return;
 		}
 	}
