@@ -47,7 +47,7 @@ void map() {
 	system("color 1a");
 	system("cls");
 	cout << "Tavo laivai:" << endl;
-	cout << "  0|1|2|3|4|5|6|7|8|9|      || *(Tusti langeliai) +(Numustas laivas) -(Nepataikyta)" << endl;
+	cout << "  0|1|2|3|4|5|6|7|8|9|      || *(Tusti langeliai) +(Numustas laivas) 0(Nepataikyta)" << endl;
 	for (int i = 0; i < 10; i++) {
 		cout << i << "|";
 		for (int j = 0; j < 10; j++) {
@@ -58,7 +58,7 @@ void map() {
 				cout << "+" << " ";
 			}
 			else if (mas[i][j] == 3) {
-				cout << "-" << " ";
+				cout << "0" << " ";
 			}
 			else {
 				cout << mas[i][j] << " ";
@@ -82,7 +82,7 @@ void map() {
 				cout << "+" << " ";
 			}
 			else if (mas2[i][j] == 3) {
-				cout << "-" << " ";
+				cout << "0" << " ";
 			}
 			else {
 				cout << "*" << " ";
@@ -94,7 +94,13 @@ void map() {
 }
 
 bool Puolimas(int q, int w) {
-	if (mas2[w][q] == 3 || mas2[w][q] == 2) {
+	if (w > 9 || q < 0 || w > 9 || q < 0) {
+		cout << "Pakartokite ivedima:";
+		cin >> q >> w;
+		Puolimas(q, w);
+		return 0;
+	}
+	else if (mas2[w][q] == 3 || mas2[w][q] == 2) {
 		cout << "Cia jau buvo sauta, kartokite is naujo: ";
 		cin >> q >> w;
 		Puolimas(q, w);
