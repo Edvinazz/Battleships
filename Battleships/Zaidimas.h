@@ -24,8 +24,6 @@ public:
 
 		PosX = rand() % 10;
 		PosY = rand() % 10;
-
-		cout << PosX << "   " << PosY << endl;
 	}
 
 public:
